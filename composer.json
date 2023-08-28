@@ -13,6 +13,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.0",
+        "livewire/volt": "^1.0",
         "lorisleiva/laravel-actions": "^2.7",
         "predis/predis": "^2.2"
     },

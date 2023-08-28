@@ -9,6 +9,7 @@ use App\Http\Livewire\Auth\Passwords\Reset;
 use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
 use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/test', function() {
+   $str = str('-----
+NAME: Elliott
+AGE:
+ADDRESS:
+MESSAGE: Could you please provide Elliott\'s age and address as well?');
+
+   $match = $str->match('/ADDRESS:\s*([^\n]+)/')->toString();
+
+   dd($match);
+});
+
+Volt::route('/', 'homepage');
+//Route::view('/', 'welcome')->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
